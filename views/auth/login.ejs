@@ -1,0 +1,29 @@
+<div class="login">
+<% if (errors) {%>
+  <% errors.forEach(function (error) { %>
+    <%= __(error) %>
+  <% }) %>
+<% } %>
+<div class="pen-title">
+  <h1>Jarbas</h1>
+  <h2>Uma solução em Internet das Coisas!</h2>
+</div>
+<!-- Form Module-->
+<div class="module form-module">
+
+<form role="form" action="/auth/local" method="post">
+  <input type="text" name="identifier" placeholder="Usuario">
+  <input type="password" name="password" placeholder="Senha">
+  <br>
+  <br>
+  <button type="submit">Entrar</button>
+</form>
+
+<% if (Object.keys(providers).length) {%>
+
+  <% Object.keys(providers).forEach(function (key) { %>
+    <a href="/auth/<%= providers[key].slug %>" role="button"><%= providers[key].name %></a>
+  <% }) %>
+<% } %>
+</div>
+</div>
