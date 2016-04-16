@@ -64,6 +64,7 @@ exports.register = function (req, res, next) {
 
     Passport.create({
       protocol    : 'local'
+    , username : string
     , password    : password
     , user        : user.id
     , accessToken : token
