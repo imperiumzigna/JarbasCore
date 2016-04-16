@@ -6,6 +6,13 @@
  */
 
 module.exports = {
-	
-};
+  me: function () {
+    if (req.user.isAuthenticated) {
+      return req.user.username
+
+    }
+
+  }
+}
+
 
